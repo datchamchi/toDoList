@@ -8,6 +8,8 @@
         "noUselessIndex": true
       }
     ],
+
+    // "import/newline-after-import": ["no", { "count": 2 }],
     "spaced-comment": "off",
     "no-console": "warn",
     "consistent-return": "off",
