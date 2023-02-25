@@ -44,10 +44,10 @@ exports.updateWork = catchAsync(async (req, res, next) => {
     data: newWork,
   });
 });
-// exports.deleteWork = catchAsync(async (req, res, next) => {
-//   await Work.findByIdAndDelete(req.params.workId);
-//   res.status(204).json({
-//     status: "sucess",
-//     data: null,
-//   });
-// });
+exports.deleteWork = catchAsync(async (req, res, next) => {
+  await Work.findByIdAndDelete(req.params.workId);
+  res.status(204).json({
+    status: "sucess",
+    data: null,
+  });
+});
