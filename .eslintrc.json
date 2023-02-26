@@ -8,7 +8,10 @@
         "noUselessIndex": true
       }
     ],
-
+    "import/no-extraneous-dependencies": [
+      "no",
+      { "devDependencies": ["**/*.test.js", "**/*.spec.js"] }
+    ],
     // "import/newline-after-import": ["no", { "count": 2 }],
     "spaced-comment": "off",
     "no-console": "warn",
