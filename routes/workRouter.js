@@ -3,7 +3,9 @@ const express = require("express");
 const router = express.Router({ mergeParams: true });
 
 const workController = require("./../controller/workController");
+const authController = require("./../controller/authController");
 
+router.use(authController.protect);
 router
   .route("/:workId")
   .delete(workController.deleteWork)

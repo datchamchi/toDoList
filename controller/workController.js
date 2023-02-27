@@ -4,6 +4,7 @@ const WorkFeature = require("./../utils/workFeature");
 const catchAsync = require("./../utils/catchAsync");
 
 exports.createNewWork = catchAsync(async (req, res, next) => {
+  req.body.user = req.user.id;
   const work = await Work.create(req.body);
   res.status(200).json({
     stattus: "success",
@@ -26,7 +27,7 @@ exports.getAllWork = catchAsync(async (req, res, next) => {
     .sorted()
     // .paginate()
     .limitField()
-    .query.find({ user: req.params.userId });
+    .query.find({ user: req.user.id });
 
   res.status(200).json({
     status: "sucess",
