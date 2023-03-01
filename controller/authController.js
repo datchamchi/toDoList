@@ -55,3 +55,13 @@ exports.protect = catchAsync(async (req, res, next) => {
   req.user = currentUser;
   next();
 });
+exports.logOut = catchAsync(async (req, res, next) => {
+  res.cookie("jwt", "", {
+    maxAge: 1000,
+    httpOnly: true,
+  });
+  res.status(200).json({
+    status: "sucess",
+    message: "Log out succesfully !!",
+  });
+});

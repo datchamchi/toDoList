@@ -31,7 +31,6 @@ class workFeature {
   }
   limitField() {
     const { fields } = this.queryString;
-    console.log(fields);
     if (fields) {
       this.query = this.query.select(fields.split(",").join(" "));
     }

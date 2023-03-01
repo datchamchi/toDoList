@@ -6,6 +6,7 @@ const workController = require("./../controller/workController");
 const authController = require("./../controller/authController");
 
 router.use(authController.protect);
+
 router
   .route("/:workId")
   .delete(workController.deleteWork)

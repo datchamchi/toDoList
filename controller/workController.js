@@ -25,7 +25,7 @@ exports.getAllWork = catchAsync(async (req, res, next) => {
   const works = await new WorkFeature(Work.find(), req.query)
     .filter()
     .sorted()
-    // .paginate()
+    .paginate()
     .limitField()
     .query.find({ user: req.user.id });
 
